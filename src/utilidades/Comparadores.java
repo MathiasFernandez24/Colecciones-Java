@@ -1,5 +1,6 @@
 package utilidades;
 
+import entidades.Pais;
 import entidades.Pelicula;
 import java.util.Comparator;
 
@@ -32,6 +33,19 @@ public class Comparadores {
         @Override
         public int compare(Pelicula t, Pelicula t1) {
             return t.getDirector().compareTo(t1.getDirector());
+        }
+    };
+
+    public static Comparator<Pais> paisAscendente = new Comparator<Pais>() {
+        @Override
+        public int compare(Pais t, Pais t1) {
+            return t.getPoblacion().compareTo(t1.getPoblacion());
+        }
+    };
+    public static Comparator<Pais> paisAscendenteString = new Comparator<Pais>() {
+        @Override
+        public int compare(Pais t, Pais t1) {
+            return t.getNombrePais().compareTo(t1.getNombrePais());
         }
     };
 

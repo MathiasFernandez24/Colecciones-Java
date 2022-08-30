@@ -1,16 +1,24 @@
 package pkg07.colecciones;
 
 import entidades.Alumno;
+import entidades.Pais;
 import entidades.Pelicula;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 import servicios.AlumnoService;
+import servicios.PaisService;
 import servicios.PeliculaService;
+import servicios.ProductosService;
+import utilidades.Comparadores;
 
 /**
  *
@@ -24,7 +32,9 @@ public class Colecciones {
     public static void main(String[] args) {
         //ejercicio1y2();
         //ejercicio3();
-        ejercicio4();
+        //ejercicio4();
+        //ejercicio5();
+        ejercicio6();
 
     }
 
@@ -58,7 +68,7 @@ public class Colecciones {
 
         //EJERCICIO 2
         Iterator<String> it = razas.iterator();
-        System.out.print("Buscar perro: ");
+        System.out.print("Buscar raza: ");
         String perroBuscado = sc.next();
         Boolean bandera = true;
         while (it.hasNext()) {
@@ -101,8 +111,8 @@ public class Colecciones {
         }
         sv.notaFinal(listaAlumnos);
     }
-    
-    public static void ejercicio4(){
+
+    public static void ejercicio4() {
         PeliculaService sv = new PeliculaService();
         ArrayList<Pelicula> listilla = sv.crearPeliculas();
         sv.mostrarPelis(listilla);
@@ -112,4 +122,28 @@ public class Colecciones {
         sv.tituloOrdenar(listilla);
         sv.directorOrdenar(listilla);
     }
+
+    public static void ejercicio5() {
+        PaisService sv = new PaisService();
+        HashSet<Pais> paises = sv.crearHashSetlistPaises();
+        sv.mostrar(paises);
+    }
+
+    public static void ejercicio6() {
+        ProductosService sv = new ProductosService();
+        HashMap<String, Integer> mapa = sv.crearLista();
+        System.out.println(mapa);
+
+        sv.agregarElemento(mapa);
+        System.out.println(mapa);
+
+        sv.modificarPrecio(mapa);
+        System.out.println(mapa);
+
+        sv.eliminarProducto(mapa);
+        System.out.println(mapa);
+        sv.mostrar(mapa);
+
+    }
+
 }

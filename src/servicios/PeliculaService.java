@@ -78,7 +78,7 @@ public class PeliculaService {
         Collections.sort(listisima, Comparadores.tituloAscendente);
         System.out.println("\nPeliculas ordenadas por titulo:");
         for (Pelicula pelicula : listisima) {
-            System.out.println("*"+pelicula.getTitulo()+" de " + pelicula.getDirector());
+            System.out.println("*" + pelicula.getTitulo() + " de " + pelicula.getDirector());
         }
     }
 
@@ -86,7 +86,7 @@ public class PeliculaService {
         Collections.sort(listisima, Comparadores.directorAscendente);
         System.out.println("\nPeliculas ordenadas por director:");
         for (Pelicula pelicula : listisima) {
-            System.out.println("*"+pelicula.getTitulo()+" de " + pelicula.getDirector());
+            System.out.println("*" + pelicula.getTitulo() + " de " + pelicula.getDirector());
         }
     }
 }
